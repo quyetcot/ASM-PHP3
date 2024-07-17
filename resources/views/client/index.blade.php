@@ -1,6 +1,6 @@
 @extends('client.layouts.master')
 @section('title')
-Tin Tức 24h - Nhanh nhưng chưa chắc đã chuẩn
+Tin Tức 24h - Nhanh nhưng chưa chắc đã chuẩn 
 @endsection
 @section('content')
      <!-- Main News Slider Start -->
