@@ -1,3 +1,6 @@
+@php
+    $list_categories_arr = DB::table('categories')->get();
+@endphp
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-2 py-lg-0 px-lg-5">
         <a href="index.html" class="navbar-brand d-block d-lg-none">
@@ -29,9 +32,12 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="" class="nav-item nav-link text-uppercase font-weight-bold ">Thời sự</a>
-                <a href="" class="nav-item nav-link text-uppercase font-weight-bold">Kinh tế</a>
-                <a href="" class="nav-item nav-link text-uppercase font-weight-bold">Đời sống</a>
+                @foreach ( $list_categories_arr as $category)
+                <a href="{{ url('/', [$category->slug]) }}" class="nav-item nav-link text-uppercase font-weight-bold ">{{ $category->name }}</a>
+                @endforeach
+             
+                {{-- <a href="" class="nav-item nav-link text-uppercase font-weight-bold">Kinh tế</a>
+                <a href="" class="nav-item nav-link text-uppercase font-weight-bold">Đời sống</a> --}}
             </div>
            
         </div>
