@@ -4,7 +4,7 @@
     <h1>Kết quả tìm kiếm cho: "{{ $query }}"</h1>
     
     @if($articles_search->count())
-        <ul class="list-group">
+        <div class="row">
             @foreach($articles_search as $article)
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
@@ -18,7 +18,7 @@
                 </div>
             </div>
             @endforeach
-        </ul>
+        </div>
         <!-- Hiển thị phân trang -->
         {{ $articles_search->links() }}
     @else
