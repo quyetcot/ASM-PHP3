@@ -25,7 +25,7 @@
                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href="">{{ $article->category->name }}</a>
                     <a class="text-body" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                 </div>
-                <a class="small text-body text-uppercase font-weight-medium" href="">{{ $article->title }}</a>
+                <a class="small text-body text-uppercase font-weight-medium" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
             </div>
             @endforeach
             {{-- <div class="mb-3">

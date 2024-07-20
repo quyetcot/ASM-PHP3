@@ -21,7 +21,7 @@
                                         <a class="text-white" href="">{{ $article->created_at->format('d-m-Y') }}</a>
                                 </div>
                                 <a class="h2 m-0 text-white text-uppercase font-weight-bold"
-                                    href="">{{ $article->title }}</a>
+                                    href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                             </div>
                         </div>
                     @endforeach
@@ -42,7 +42,7 @@
                                         href="">{{ $article->category->name }}</a>
                                     <a class="text-white" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                                 </div>
-                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $article->title }}</a>
+                                <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             style="width: calc(100% - 170px); padding-right: 90px;">
                             @foreach ($articles as $article)
                             <div class="text-truncate"><a class="text-white text-uppercase font-weight-semi-bold"
-                                href="">{{ $article->title }}</a></div>
+                                href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a></div>
                             @endforeach
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                 href="">{{ $article->category->name }}</a>
                             <a class="text-white" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                         </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="">{{ $article->title }}</a>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                     </div>
                 </div>
                 @endforeach
@@ -129,7 +129,7 @@
                                         <a class="text-body" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                                     </div>
                                     <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold"
-                                        href="">{{ $article->title }}</a>
+                                        href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                                     <p class="m-0">{{ Str::limit($article->lead, 150,'...') }}</p>
                                 </div>
                                 <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -165,7 +165,7 @@
                                             href="">{{ $article->category->name }}</a>
                                         <a class="text-body" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $article->title }}</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                                 </div>
                             </div> 
                          
@@ -190,7 +190,7 @@
                                             href="">{{ $article->category->name }}</a>
                                         <a class="text-body" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $article->title }}</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                                 </div>
                             </div> 
                          
@@ -275,7 +275,7 @@
                                             href="">{{ $article->category->name }}</a>
                                         <a class="text-body" href=""><small>{{ $article->created_at->format('d-m-Y') }}</small></a>
                                     </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="">{{ $article->title }}</a>
+                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="{{ route('detailnew.show', ['category' => $article->category->slug, 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                                 </div>
                                
                                 

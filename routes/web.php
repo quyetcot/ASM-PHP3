@@ -1,7 +1,10 @@
 <?php
 
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\DetailNewController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('client.index');
-// });
+
 Route::get('/',[HomeController::class,'index']);
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
+
+Route::get('/{category}/{slug}', [DetailNewController::class, 'show'])->name('detailnew.show');
+Route::get('/{slug}', [CategoryController::class, 'show'])->name('categories.show');
+
+
