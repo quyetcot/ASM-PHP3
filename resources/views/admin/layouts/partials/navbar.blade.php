@@ -44,8 +44,14 @@
                         class="bi bi-person fs-4 me-2"></i>Hồ sơ</a>
                 <a class="dropdown-item d-flex align-items-center" href="settings.html"><i
                         class="bi bi-gear fs-4 me-2"></i>Cài đặt</a>
-                <a class="dropdown-item d-flex align-items-center" href="login.html"><i
-                        class="bi bi-escape fs-4 me-2"></i>Đăng xuất</a>
+
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> 
+                    <i class="bi bi-escape fs-4 me-2"></i> Đăng xuất
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
     </div>
