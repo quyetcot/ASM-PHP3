@@ -12,8 +12,23 @@
                     <li class="nav-item border-right border-secondary">
                         <a class="nav-link text-body small" href="#">Liên hệ</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-body small" href="#">Đăng nhập</a>
+                    <li class="nav-item dropdown">
+                        @auth
+                            <a class="nav-link dropdown-toggle text-body small" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Xin Chào, {{ auth()->user()->name }}
+                            </a>
+                            <div class="dropdown-menu btn btn-secondary" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    Đăng xuất
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        @else
+                            <a class="nav-link text-body small" href="{{ route('login') }}">Đăng nhập</a>
+                        @endauth
                     </li>
                 </ul>
             </nav>

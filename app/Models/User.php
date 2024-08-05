@@ -13,7 +13,6 @@ class User extends Authenticatable
 
     // Xác định các thuộc tính có thể gán hàng loạt
     protected $fillable = [
-        'username',
         'name',
         'email',
         'password',
@@ -50,4 +49,18 @@ class User extends Authenticatable
     // {
     //     return $this->hasMany(Like::class, 'user_id');
     // }
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isEditor()
+    {
+        return $this->role === 'editor';
+    }
+
+    public function isReader()
+    {
+        return $this->role === 'reader';
+    }
 }

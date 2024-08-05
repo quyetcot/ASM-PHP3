@@ -13,6 +13,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'slug',
+        'description'
     ];
 
     // Định nghĩa mối quan hệ với bảng articles (một-nhiều)
