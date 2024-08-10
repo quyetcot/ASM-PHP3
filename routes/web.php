@@ -67,6 +67,7 @@ Route::resource('admin/articles', ArticleController::class);
 
 Route::resource('admin/categories', AdminCategoryController::class);
 
+//Đăng xuất Admin
 Route::post('/logout', [DashboardController::class, 'logout'])->name('logout');
 
 // Tìm kiếm
